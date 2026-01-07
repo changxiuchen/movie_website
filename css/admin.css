@@ -1,0 +1,544 @@
+/* Admin Dashboard & Reservations Styles */
+.admin-dashboard-section, .admin-reservations-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+    padding: 2rem 2.5rem;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+.admin-tabs .tab, .admin-tabs a.tab {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+.admin-tabs .tab:hover, .admin-tabs a.tab:hover {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    transform: translateY(-1px);
+}
+.admin-tabs .tab.active, .admin-tabs a.tab.active {
+    background: #e74c3c;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    transform: translateY(-2px);
+}
+.admin-tabs .tab.active:hover, .admin-tabs a.tab.active:hover {
+    background: #c0392b;
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+/* Add subtle icons to tabs */
+.admin-tabs .tab::before, .admin-tabs a.tab::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.admin-tabs .tab.active::before, .admin-tabs a.tab.active::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Add click animation */
+.admin-tabs .tab:active, .admin-tabs a.tab:active {
+    transform: translateY(0px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.admin-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    justify-content: space-between;
+}
+.stat-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    flex: 1;
+}
+.stat-card h2 {
+    font-size: 2.2rem;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+.stat-card p {
+    color: #888;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.quick-actions, .movie-management {
+    flex: 1;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+.quick-actions h3, .movie-management h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+.btn.btn-secondary {
+    /* Using global .btn-secondary styles with admin-specific overrides */
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+    margin: 2.5rem 0 2.5rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.admin-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #222;
+    letter-spacing: 0.01em;
+}
+.admin-table {
+    width: 100%;
+    min-width: 1150px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.admin-table th, .admin-table td {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+.admin-table th {
+    background: #f4f4f4;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+}
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+.admin-table tr:nth-child(even) td {
+    background: #fafbfc;
+}
+.admin-table td {
+    font-size: 1rem;
+    color: #333;
+}
+
+.cancel-btn {
+    /* Using global .btn-danger styles with admin-specific overrides */
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.reservations-list {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+}
+.reservations-list > .admin-table {
+    width: 100%;
+    margin: 0;
+}
+
+/* Admin Movies Page: Movie Card Grid & Card Styles */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.movie-card-admin {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    min-height: 220px;
+}
+.movie-card-admin:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+}
+.admin-movie-poster-wrapper {
+    flex: 0 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    padding: 0.5rem;
+    aspect-ratio: 2/3;
+    max-width: 80px;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.admin-movie-poster {
+    width: 100%;
+    height: 100%;
+    max-width: 80px;
+    max-height: 120px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.admin-movie-card-content {
+    flex: 1;
+    padding: 1.2rem 1.5rem 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.admin-movie-title-admin {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+.admin-movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.7rem;
+}
+.admin-movie-meta-row {
+    font-size: 0.98rem;
+    color: #444;
+    min-width: 120px;
+}
+.admin-movie-meta-label {
+    font-weight: 500;
+    color: #888;
+    margin-right: 0.3em;
+}
+.admin-movie-meta-value {
+    color: #222;
+}
+.admin-movie-desc-admin {
+    font-size: 0.97rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+    max-height: 3.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   
+}
+.admin-movie-actions {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+.edit-btn, .delete-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.edit-btn {
+    background: #3498db;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+.edit-btn:hover {
+    background: #2980b9;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.4);
+}
+.delete-btn {
+    background: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+.delete-btn:hover {
+    background: #c82333;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(220, 53, 69, 0.4);
+}
+.add-movie-btn {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    max-width: 220px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 12px 24px;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+.add-movie-btn:hover {
+    background: #218838;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Admin Edit Movie & Add Movie Form Styles */
+.admin-form-container {
+    max-width: 600px;
+    margin: 2.5rem auto;
+    background: #f4f4f4;
+    border-radius: 12px;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+}
+.admin-form-container h2 {
+    margin-bottom: 1.5rem;
+}
+.admin-form label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+.admin-form input, .admin-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+.admin-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+.admin-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.2rem;
+}
+.admin-form .btn.btn-secondary {
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.admin-form .btn.btn-secondary:hover {
+    background: #218838;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+.admin-form .btn.cancel-btn {
+    background: #6c757d;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+.admin-form .btn.cancel-btn:hover {
+    background: #5a6268;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+.error-msg {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.success-msg {
+    color: #28a745;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 0.75rem;
+    border-radius: 4px;
+}
+
+/* Mobile phones (< 480px) */
+@media (max-width: 479px) {
+    .movie-card-admin {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .admin-movie-poster-wrapper {
+        flex: none;
+        max-width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+        padding: 0.5rem 0.5rem 0 0.5rem;
+    }
+    .admin-movie-poster {
+        width: 80px;
+        height: 120px;
+    }
+    .admin-movie-card-content {
+        padding: 1rem;
+    }
+    
+    .admin-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .admin-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .admin-table {
+        min-width: 600px;
+        font-size: 0.8rem;
+    }
+    
+    .admin-table th, .admin-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Tablets (>= 768px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .admin-stats {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .admin-actions {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .movie-card-admin {
+        flex-direction: row;
+        min-height: 200px;
+    }
+    
+    .admin-movie-poster-wrapper {
+        flex: 0 0 120px;
+        min-width: 120px;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    .admin-movie-poster {
+        width: 100px;
+        height: 150px;
+    }
+    
+    .admin-table, .admin-table th, .admin-table td {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.6rem;
+    }
+}
+
+/* Desktop screens (>= 1200px) */
+@media (min-width: 1200px) {
+    .admin-stats {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .admin-actions {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .movie-card-admin {
+        flex-direction: row;
+        min-height: 220px;
+    }
+    
+    .admin-movie-poster-wrapper {
+        flex: 0 0 140px;
+        min-width: 140px;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+    
+    .admin-movie-poster {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .admin-table, .admin-table th, .admin-table td {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+.admin-table-meta {
+    font-size: 0.95em;
+    color: #888;
+}
